@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+
+    <body>
+
+        <input type="text" id="textInput">
+        <button id="textChanger">Change the text</button>
+        <p id="text">This is some text</p>
+
+        <p>What is the magic word</p>
+        <input type="text" id="magicWord" placeholder="magic word">
+        <button id="checkMagicWord">Enter</button>
+
+        <div id="tweetDiv"></div>
+
+        <script type="text/javascript">
+
+            //Text input
+            document.getElementById("textChanger").onclick=function(){
+                var textEntered = "";
+
+                textEntered = document.getElementById("textInput").value;
+                
+                document.getElementById("text").innerHTML = textEntered;
+
+            }
+
+            //Array
+            var myArray = new Array();
+            myArray[0] = "Pizza";
+            myArray[1] = "Steak and Chips";
+            myArray[2] = "Burger and Chips";
+            console.log(myArray.length)
+
+            var tweets = ["Good morning everybody","I need my coffee"];
+            tweets.push("Back to work again :("); //add to tweets
+            tweets.splice(1,1) // from index 1 remove 1 item 
+            tweets.splice(1,0,"cornflakes for breakfast"); //from index 1, remove none, add 1
+
+            //if statements
+            document.getElementById("checkMagicWord").onclick = function(){
+                var magicWordEntered = document.getElementById("magicWord").value;
+                var magicWord = "Cassy";
+                if(magicWord == magicWordEntered){
+                    alert("You got it");
+                }
+                else
+                {
+                    alert("nope. try again");
+                }
+            }
+
+            //for loop
+            for(var i =0; i < 5; i++)
+            {
+                alert(i);
+            }
+
+            var tweetString =""
+            for(var i = 0; i < tweets.length; i++)
+            {
+                tweetString += "<p>"+tweets[i] +"</p>";
+            }
+
+            document.getElementById("tweetDiv").innerHTML = tweetString;
+
+
+        </script>
+
+
+    </body>
+</html>
